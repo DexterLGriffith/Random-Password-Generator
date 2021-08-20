@@ -25,28 +25,28 @@ function generatePassword() {
       if (checkIfHasNum) {
         alert("Your Password Must Contain a Number!");
       }
-      if (UserPassLength < 8 || > 128) {
+      if (UserPassLength < 8 || UserPassLength > 128) {
         alert("Your Password Must be between 8 and 128 characters")
       }
-} while {
-  
+} 
+  while (checkIfHasNum || UserPassLength < 8 || UserPassLength > 128);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-console.log(checkIfLength());
+console.log(generatePassword());
 
 
 
