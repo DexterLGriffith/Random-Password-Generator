@@ -17,8 +17,8 @@ function generatePassword() {
   var length = 0;
   var characters = "";
   var newpass = "";
+  var criteria = 0;
 
-}
   // WHEN prompted for password criteria
   // THEN I select which criteria to include in the password
   // WHEN prompted for the length of the password
@@ -60,37 +60,30 @@ function generatePassword() {
       if (HSymbol) {
         characters += charpool.Symbol;
       }
+      if (!HUpper && !HLower && !HNumber && HSymbol) {
+        alert("Your password must contain atleast 2 character options!");
+      }
+  } 
     while (!HLower && !HUpper && !HNumber && !HSymbol);
-  }
 
+ //assign length to the selected input variables. 
+length = UserPassLength - criteria;
+   for (var i =0; i < length; i++) {
+   newpass += characters[Math.floor(Math.random() * characters.length)]  
+   }
 
+  return newpass;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-//   passwordText.value = password;
-
-
+  passwordText.value = password;
+}
 
 
 // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
