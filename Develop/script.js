@@ -5,10 +5,11 @@ var generateBtn = document.querySelector("#generate");
 // WHEN I click the button to generate a password
 // THEN I am presented with a series of prompts for password criteria
 function generatePassword() {
+//character pool  
   const charpool = {
-    Lower: 'abcdefghijklmnopqrstuvwxyz',
-    Upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-    Symbol: '~`!@#$%^&*()_-+={[}];",><./?',
+    Lower: "abcdefghijklmnopqrstuvwxyz",
+    Upper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    Symbol: "~`!@#$%^&*()_-+={[}];,><./?",
     Number: "0123456789"
   };
 
@@ -17,7 +18,7 @@ function generatePassword() {
   var characters = "";
   var newpass = "";
 
-
+}
   // WHEN prompted for password criteria
   // THEN I select which criteria to include in the password
   // WHEN prompted for the length of the password
@@ -29,9 +30,9 @@ function generatePassword() {
         alert("Enter a Number!");
       };
       if (UserPassLength < 8 || UserPassLength > 128) {
-        alert("Your Password Must be between 8 and 128 characters")
+        alert("Your Password Must be between 8 and 128 characters");
       }
-} 
+  } 
   while (checkIfHasNum || UserPassLength < 8 || UserPassLength > 128);
   //do while loop for user input for password characters. 
   
@@ -39,17 +40,27 @@ function generatePassword() {
 // THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters 
   do {
     // lowercase character question 
-    var HLower = window.prompt("Do you want lowercase numbers in the password?");
+    var HLower = window.confirm("Do you want lowercase numbers in the password?");
       if (HLower) {
         characters += charpool.Lower;
       };
 
     // Uppercase character question
-    var HUpper= window.prompt("Do you want uppercase numbers in the password?");
+    var HUpper= window.confirm("Do you want uppercase numbers in the password?");
       if (HUpper) {
         characters += charpool.Upper;
       };
-    
+    // Number character question 
+    var HNumber = window.confirm("Do you want number characters in the password?");
+      if (HNumber) {
+        characters += charpool.Number;
+      };
+    // Symbol character question
+    var HSymbol = window.confirm("Do you want symbol characters in the password?");
+      if (HSymbol) {
+        characters += charpool.Symbol;
+      }
+    while (!HLower && !HUpper && !HNumber && !HSymbol);
   }
 
 
@@ -72,14 +83,14 @@ function generatePassword() {
 
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+//   passwordText.value = password;
 
-}
+
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// generateBtn.addEventListener("click", writePassword);
