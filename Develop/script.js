@@ -60,7 +60,7 @@ function generatePassword() {
       if (HSymbol) {
         characters += charpool.Symbol;
       }
-      if (!HUpper && !HLower && !HNumber && HSymbol) {
+      if (!HUpper && !HLower && !HNumber && !HSymbol) {
         alert("Your password must contain atleast 2 character options!");
       }
   } 
@@ -69,7 +69,7 @@ function generatePassword() {
  //assign length to the selected input variables. 
 length = UserPassLength - criteria;
    for (var i =0; i < length; i++) {
-   newpass += characters[Math.floor(Math.random() * characters.length)]  
+   newpass += characters[Math.floor(Math.random() * characters.length)];  
    }
 
   return newpass;
