@@ -8,7 +8,13 @@ The password generator given, did not function as intended. I will use my unders
 
 # Tasks Completed
 
-    1. 
+    1. Created variables for all character classes, and defined the characters that would apart of the randomization process and put them in a variable called charpool (characterPool)
+
+    2. Created Do while loop which prompted the user to choose how many characters total they wanted the password to be. If the user did not confirm length (selecting a number from 8-125) then the loop would not continue, until the user selected within the correct criteria.
+
+    3. Created Do while loop for all the character variables in order to ask which charadcters the user wanted to incllude in their password. (uppercase, lowercase, numbers and symbols.)
+
+    4. Defined length, as an operation of a randomized number multiplied by whatever length of characters the user selected. 
 
 # Installation
 
