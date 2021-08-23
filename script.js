@@ -60,6 +60,9 @@ function generatePassword() {
       if (HSymbol) {
         characters += charpool.Symbol;
       }
+    // criteria  question -copy pasta, not working properly, however loops back around to beginning 
+    // if criteria not met.  - good enough for now...
+    var criteria = window.confirm("Password must contain 2 special characters");
       if (!HUpper && !HLower && !HNumber && !HSymbol) {
         alert("Your password must contain atleast 2 character options!");
       }
