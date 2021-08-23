@@ -46,7 +46,7 @@ The password generator given, did not function as intended. I will use my unders
 
 # Credits 
 
-    Dexter Griffith
+Dexter Griffith
 
 # References
 
