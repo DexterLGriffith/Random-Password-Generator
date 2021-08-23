@@ -45,17 +45,17 @@ function generatePassword() {
         characters += charpool.Lower;
       };
 
-    // Uppercase character question
+    // Uppercase character question -copy pasta 
     var HUpper= window.confirm("Do you want uppercase numbers in the password?");
       if (HUpper) {
         characters += charpool.Upper;
       };
-    // Number character question 
+    // Number character question  -copy pasta 
     var HNumber = window.confirm("Do you want number characters in the password?");
       if (HNumber) {
         characters += charpool.Number;
       };
-    // Symbol character question
+    // Symbol character question -copy pasta 
     var HSymbol = window.confirm("Do you want symbol characters in the password?");
       if (HSymbol) {
         characters += charpool.Symbol;

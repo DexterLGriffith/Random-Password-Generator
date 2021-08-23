@@ -50,3 +50,9 @@ The password generator given, did not function as intended. I will use my unders
 
 # References
 
+    1. https://youtu.be/duNmhKgtcsI
+    2. https://youtu.be/9sT03jEwcaw
+    3. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while
+    4. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while
+    5. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition_assignment
+    
