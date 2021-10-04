@@ -8,11 +8,10 @@ function generatePassword() {
   var lower = "abcdefghijklmnopqrstuvwxyz";
   var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var symbol = "~`!@#$%^&*()_-+={[}];,><./?";
-  var number = "0123456789"
-  var length = 0;
+  var number = "0123456789";
   var characters = "";
-  var newpass = "";
-  var criteria = 0;
+  var generatedNewPass = "";
+
 
 
   var userPassLength = window.prompt("Enter your desired new password length, it must be between 8 and 128 characters.");
@@ -42,13 +41,27 @@ function generatePassword() {
 
 
     
-  else if (checkIfHasNum) { 
+  if (promptUserNumber) { 
     characters += number 
-
+    console.log(characters)
   }
-
-
-
+  if (promptUserLower) {
+    characters += lower
+    console.log(characters)
+  }
+  if (promptUserSymbol) { 
+    characters += symbol 
+    console.log(characters)
+  }
+  if (promptUserUpper) { 
+    characters += upper 
+    console.log(characters)
+  }
+for (var i = 0; i < passLengthParse; i++) {
+  generatedNewPass += characters [Math.floor(Math.random() * characters.length)];
+  console.log(generatedNewPass)
+}
+return generatedNewPass;
   // while (checkIfHasNum || UserPassLength < 8 || UserPassLength > 128);
   // //do while loop for user input for password characters. 
   
@@ -95,14 +108,15 @@ function generatePassword() {
 
 
 // // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-//   passwordText.value = password;
-// }
+  passwordText.value = password;
+}
 
 
 // // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
-} generatePassword ();
+generateBtn.addEventListener("click", password);
+// } 
+} generatePassword();
