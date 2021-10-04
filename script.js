@@ -18,6 +18,7 @@ function generatePassword() {
   var checkIfHasNum = isNaN(userPassLength);
   console.log(checkIfHasNum);
     if ((userPassLength > 7) && (userPassLength < 128)) {
+      // convert input from prompt which is a string variable... to a number
       var passLengthParse = parseInt(userPassLength)
     };
     if (userPassLength < 8 || userPassLength > 128) {
@@ -62,6 +63,22 @@ for (var i = 0; i < passLengthParse; i++) {
   console.log(generatedNewPass)
 }
 return generatedNewPass;
+// // Write password to the #password input
+} 
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+
+// // Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
+
+
   // while (checkIfHasNum || UserPassLength < 8 || UserPassLength > 128);
   // //do while loop for user input for password characters. 
   
@@ -108,15 +125,14 @@ return generatedNewPass;
 
 
 // // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
-
-
-// // Add event listener to generate button
-generateBtn.addEventListener("click", password);
 // } 
-} generatePassword();
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
+
+//   passwordText.value = password;
+// }
+
+
+// // // Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
