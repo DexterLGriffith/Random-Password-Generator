@@ -21,9 +21,11 @@ function generatePassword() {
       // convert input from prompt which is a string variable... to a number
       var passLengthParse = parseInt(userPassLength)
     };
+    // alert for password length error... to keep it between 8 and 128 characters. 
     if (userPassLength < 8 || userPassLength > 128) {
       alert("Your Password Must be between 8 and 128 characters");
     }
+  // prompts for user selection on character choices 
   var promptUserLower = confirm("Would you like to have lowercase characters in your password?");
   var promptUserUpper = confirm("Would you like to have uppercase characters in your password?");
   var promptUserSymbol = confirm("Would you like to have special symbols in your password?");
@@ -34,6 +36,7 @@ function generatePassword() {
       promptUserSymbol === false && 
       promptUserNumber === false) 
       { 
+        //criteria prompted due to lack of characters. 
         alert("You must select atleast 2 characters");
 
         return null
@@ -41,24 +44,29 @@ function generatePassword() {
     // store user input and put into password. 
 
 
-    
+  // for password character strength detail  
+  // add numbers
   if (promptUserNumber) { 
     characters += number 
     console.log(characters)
   }
+  // add lowercase
   if (promptUserLower) {
     characters += lower
     console.log(characters)
   }
+  //add symbols
   if (promptUserSymbol) { 
     characters += symbol 
     console.log(characters)
   }
+  //add uppercase
   if (promptUserUpper) { 
     characters += upper 
     console.log(characters)
   }
 for (var i = 0; i < passLengthParse; i++) {
+  //randomize it, round it, multiple it. 
   generatedNewPass += characters [Math.floor(Math.random() * characters.length)];
   console.log(generatedNewPass)
 }
